@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+.wrapper {
+  width: 446px;
+  height: 661px;
+  background: rgba(255, 192, 157, 0.57);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  margin: 20px auto;
+  display: block;
+  padding: 5px;
+  padding-bottom: 30px;
+}
+.btn {
+  color: black;
+  height: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn:hover {
+  color: #767676;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-control {
+  background: #ffffff;
+  border: 1px solid #d5d5d5;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  font-family: Lexend Deca;
+  font-size: 12px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.location h3 {
+  font-family: Lexend Deca;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 19px;
+  padding-top: 10px;
+  padding-left: 15px;
 }
-
-.App-link {
-  color: #61dafb;
+.location h1 {
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 60px;
+  padding-left: 15px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.CurrentDay h3 {
+  font-family: Lexend Deca;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 15px;
+}
+.CurrentTempWrapper {
+  margin: 20px auto;
+  width: 407px;
+  height: 176px;
+  background: rgba(255, 240, 232, 0.82);
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+.Week h3 {
+  font-family: Lexend Deca;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  padding-left: 15px;
 }
