@@ -1,6 +1,6 @@
 .wrapper {
   width: 446px;
-  height: 661px;
+  height: 673px;
   background: rgba(255, 192, 157, 0.57);
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
@@ -12,8 +12,8 @@
 .btn {
   color: black;
   height: 50px;
+  padding-left: 10px;
 }
-
 .btn:hover {
   color: #767676;
 }
@@ -107,7 +107,7 @@
 .SunriseSunsetWrapper {
   margin: 14px auto 12px;
   width: 407px;
-  height: 55px;
+  height: fit-content;
   background: rgba(255, 240, 232, 0.82);
   box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
@@ -118,7 +118,10 @@
   font-size: 13px;
   line-height: 19px;
   font-weight: 400px;
-  padding-top: 35px;
+  padding-top: 40px;
+}
+.signatureGitLink {
+  text-decoration: none;
 }
 .signature-blue {
   color: #467aff;
@@ -132,9 +135,10 @@
 }
 .SunriseSunsetTime {
   text-align: center;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 hr {
+  text-align: center;
   border: none;
   border-top: 1px dashed black;
   height: 1px;
@@ -147,4 +151,38 @@ hr {
 .sunsetTime {
   font-size: 12px;
   font-family: Lexend Deca;
+}
+.CurrentTempDetails {
+  text-align: center;
+  padding-top: 28px;
+}
+.weather-details {
+  padding-top: 13px;
+  text-align: left;
+  font-family: Lexend Deca;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+}
+.weather-details-row {
+  padding-top: 10px;
+}
+.currentTempDisplay {
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 80px;
+  text-align: center;
+}
+.currentTempDescription {
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+.currentTempIcon {
+  padding-top: 30px;
 }

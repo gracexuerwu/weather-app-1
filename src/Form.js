@@ -5,7 +5,7 @@ export default function Form() {
     return (
         <form id="search-form">
             <div className="form-row">
-                <div className="col-8 btn">
+                <div className="col-9 btn">
                     <input
                         type="text"
                         className="form-control"
@@ -15,7 +15,7 @@ export default function Form() {
                         autoComplete="off"
                     />
                 </div>
-                <div className="col-4 btn">
+                <div className="col-3 btn">
                     <button type="submit" className="btn btn-link" id="button-search">
                         <i className="fas fa-search"></i>
                     </button>

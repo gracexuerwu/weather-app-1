@@ -1,13 +1,12 @@
 import React from "react";
 import "./App.css";
-import githubLogo from "./images/github-logo.png";
 
 export default function Signature() {
     return (
         <div className="Signature">
-            <span className="signature-blue">Open-source</span> code
+            <span className="signature-blue"><a href="https://github.com/gracexuerwu/weather-app-1-react" target="_blank" rel="noreferrer" className="signatureGitLink">Open-source</a></span> code
 
-            <i class="fab fa-github fa-lg"></i>by Grace Wu
+            <i className="fab fa-github fa-lg"></i>by Grace Wu
         </div>
     );
 }
