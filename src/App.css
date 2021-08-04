@@ -33,8 +33,10 @@
   font-weight: normal;
   font-size: 15px;
   line-height: 19px;
-  padding-top: 10px;
+  padding-top: 12px;
   padding-left: 15px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 .location h1 {
   font-family: Playfair Display;
@@ -43,6 +45,7 @@
   font-size: 45px;
   line-height: 60px;
   padding-left: 15px;
+  padding-bottom: 0;
 }
 .CurrentDay h3 {
   font-family: Lexend Deca;
@@ -53,7 +56,7 @@
   padding-left: 15px;
 }
 .CurrentTempWrapper {
-  margin: 20px auto;
+  margin: 0px auto 12px;
   width: 407px;
   height: 176px;
   background: rgba(255, 240, 232, 0.82);
@@ -67,6 +70,10 @@
   font-size: 14px;
   line-height: 17px;
   padding-left: 15px;
+}
+.ForecastBox {
+  padding-right: 22px;
+  padding-left: 22px;
 }
 .forecast {
   font-size: 15px;
@@ -96,4 +103,48 @@
 }
 .forecast-row {
   padding-right: 10px;
+}
+.SunriseSunsetWrapper {
+  margin: 14px auto 12px;
+  width: 407px;
+  height: 55px;
+  background: rgba(255, 240, 232, 0.82);
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+.Signature {
+  text-align: center;
+  font-family: Poppins;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 400px;
+  padding-top: 35px;
+}
+.signature-blue {
+  color: #467aff;
+}
+.fa-github {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.fa-github:hover {
+  color: #692d95;
+}
+.SunriseSunsetTime {
+  text-align: center;
+  padding-top: 10px;
+}
+hr {
+  border: none;
+  border-top: 1px dashed black;
+  height: 1px;
+  width: 225px;
+}
+.sunriseTime {
+  font-size: 12px;
+  font-family: Lexend Deca;
+}
+.sunsetTime {
+  font-size: 12px;
+  font-family: Lexend Deca;
 }
