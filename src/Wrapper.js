@@ -5,6 +5,8 @@ import Location from "./Location";
 import CurrentDay from "./CurrentDay";
 import CurrentTempWrapper from "./CurrentTempWrapper";
 import Week from "./Week";
+import ForecastBox from "./ForecastBox";
+
 
 
 export default function Wrapper() {
@@ -16,6 +18,7 @@ export default function Wrapper() {
                 <CurrentDay />
                 <CurrentTempWrapper />
                 <Week />
+                <ForecastBox />
             </div>
         </div>
     );
