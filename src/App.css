@@ -78,7 +78,7 @@
   padding-right: 22px;
   padding-left: 22px;
 }
-.forecast {
+.forecastBoxDaily {
   font-size: 15px;
   text-align: center;
   display: block;
@@ -91,20 +91,20 @@
   margin: 0 auto;
   padding: 5px;
 }
-.forecast-date {
+.forecastBoxDaily .forecast-date {
   font-size: 15px;
   font-family: Lexend Deca;
   padding-bottom: 8px;
 }
-.forecast-temperature {
+.forecastBoxDaily .forecast-temperature {
   font-family: Lexend Deca;
   font-size: 14px;
   padding: 10px 5px 0px;
 }
-.forecast-temperature-min {
+.forecastBoxDaily .forecast-temperature-min {
   color: #7d7d7d;
 }
-.forecast-row {
+.ForecastBox .forecast-row {
   padding-right: 10px;
 }
 .SunriseSunsetWrapper {
@@ -123,35 +123,35 @@
   font-weight: 400px;
   padding-top: 40px;
 }
-.signatureGitLink {
+.Signature .signatureGitLink {
   text-decoration: none;
 }
-.signature-blue {
+.Signature .signature-blue {
   color: #467aff;
 }
-.fa-github {
+.Signature .fa-github {
   padding-left: 4px;
   padding-right: 4px;
 }
-.fa-github:hover {
+.Signature .fa-github:hover {
   color: #692d95;
 }
 .SunriseSunsetTime {
   text-align: center;
   padding-top: 5px;
 }
-hr {
+.SunriseSunsetTime hr {
   text-align: center;
   border: none;
   border-top: 1px dashed black;
   height: 1px;
   width: 225px;
 }
-.sunriseTime {
+.SunriseSunsetTime .sunriseTime {
   font-size: 12px;
   font-family: Lexend Deca;
 }
-.sunsetTime {
+.SunriseSunsetTime .sunsetTime {
   font-size: 12px;
   font-family: Lexend Deca;
 }
@@ -159,7 +159,7 @@ hr {
   text-align: center;
   padding-top: 28px;
 }
-.weather-details {
+.CurrentTempDetails .weather-details {
   padding-top: 13px;
   text-align: left;
   font-family: Lexend Deca;
@@ -168,10 +168,10 @@ hr {
   font-size: 13px;
   line-height: 16px;
 }
-.weather-details-row {
+.CurrentTempDetails .weather-details-row {
   padding-top: 10px;
 }
-.currentTempDisplay {
+.CurrentTempDetails .currentTempDisplay {
   font-family: Playfair Display;
   font-style: normal;
   font-weight: bold;
@@ -179,17 +179,17 @@ hr {
   line-height: 80px;
   text-align: center;
 }
-.currentTempDescription {
+.CurrentTempDetails .currentTempDescription {
   font-family: Playfair Display;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
 }
-.currentTempIcon {
+.CurrentTempDetails .currentTempIcon {
   padding-top: 30px;
 }
-.sunsetLine {
+.SunriseSunsetTime .sunsetLine {
   display: flex;
   align-items: center;
 }

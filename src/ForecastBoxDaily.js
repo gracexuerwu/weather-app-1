@@ -4,7 +4,7 @@ import ReactAnimatedWeather from 'react-animated-weather';
 
 export default function ForecastBoxDaily(props) {
     return (
-        <div className="forecast col-2">
+        <div className="forecastBoxDaily col-2">
             <div className="forecast-date">{props.day}</div>
             <div id="weather-icon">
                 <ReactAnimatedWeather
