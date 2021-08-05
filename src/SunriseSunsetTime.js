@@ -12,7 +12,7 @@ export default function SunriseSunsetTime() {
                         <img src={Sunrise} alt="Sunrise" width="35" />
                         <div className="sunriseTime">sunrise 06:46</div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-6 sunsetLine">
                         <hr />
                     </div>
                     <div className="col-3">

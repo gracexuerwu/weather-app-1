@@ -15,10 +15,12 @@ export default function Form() {
                         autoComplete="off"
                     />
                 </div>
-                <div className="col-3 btn">
+                <div className="col-1 btn">
                     <button type="submit" className="btn btn-link" id="button-search">
                         <i className="fas fa-search"></i>
                     </button>
+                </div>
+                <div className="col-2 btn">
                     <button type="submit" className="btn btn-link" id="button-location">
                         <i className="fas fa-location-arrow"></i>
                     </button>

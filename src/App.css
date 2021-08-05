@@ -27,7 +27,7 @@
   font-family: Lexend Deca;
   font-size: 12px;
 }
-.location h3 {
+.locationCountry h3 {
   font-family: Lexend Deca;
   font-style: normal;
   font-weight: normal;
@@ -38,7 +38,7 @@
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
-.location h1 {
+.locationCity h1 {
   font-family: Playfair Display;
   font-style: normal;
   font-weight: bold;
@@ -46,6 +46,9 @@
   line-height: 60px;
   padding-left: 15px;
   padding-bottom: 0;
+}
+.temperature-toggle {
+  padding-top: 12px;
 }
 .CurrentDay h3 {
   font-family: Lexend Deca;
@@ -185,4 +188,8 @@ hr {
 }
 .currentTempIcon {
   padding-top: 30px;
+}
+.sunsetLine {
+  display: flex;
+  align-items: center;
 }
