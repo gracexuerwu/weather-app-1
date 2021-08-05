@@ -20,6 +20,7 @@ export default function TemperatureToggle(props) {
                     <span>&nbsp;&nbsp;F°</span>
                     <span>C°</span>
                 </span>
+                {/* eslint-disable-next-line */}
                 <a />
             </label>
         </div>
