@@ -9,10 +9,13 @@
   padding: 5px;
   padding-bottom: 30px;
 }
-.btn {
+.search-form .btn {
   color: black;
   height: 50px;
   padding-left: 10px;
+}
+.btn-link {
+  color: black;
 }
 .btn:hover {
   color: #767676;
@@ -37,6 +40,7 @@
   padding-left: 15px;
   margin-bottom: 0px;
   padding-bottom: 0px;
+  color: #235aa5;
 }
 .locationCity h1 {
   font-family: Playfair Display;
@@ -46,11 +50,13 @@
   line-height: 60px;
   padding-left: 15px;
   padding-bottom: 0;
+  color: #193b7b;
 }
 .temperature-toggle {
   padding-top: 12px;
 }
 .CurrentDay h3 {
+  color: #235aa5;
   font-family: Lexend Deca;
   font-style: normal;
   font-weight: normal;
@@ -63,10 +69,13 @@
   width: 407px;
   height: 176px;
   background: rgba(255, 240, 232, 0.82);
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
 }
 .Week h3 {
+  color: #235aa5;
   font-family: Lexend Deca;
   font-style: normal;
   font-weight: normal;
@@ -82,10 +91,11 @@
   font-size: 15px;
   text-align: center;
   display: block;
-  border: none;
   width: 76px;
   height: 122px;
   background: rgba(255, 240, 232, 0.82);
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   margin: 0 auto;
@@ -112,6 +122,8 @@
   width: 407px;
   height: fit-content;
   background: rgba(255, 240, 232, 0.82);
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
 }
@@ -121,7 +133,7 @@
   font-size: 13px;
   line-height: 19px;
   font-weight: 400px;
-  padding-top: 40px;
+  padding-top: 35px;
 }
 .Signature .signatureGitLink {
   text-decoration: none;
@@ -185,6 +197,7 @@
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
+  color: #193b7b;
 }
 .CurrentTempDetails .currentTempIcon {
   padding-top: 30px;

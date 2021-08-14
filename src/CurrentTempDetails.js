@@ -1,50 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import ReactAnimatedWeather from 'react-animated-weather';
+import axios from "axios";
 
 export default function CurrentTempDetails() {
-    return (
-        <div className="CurrentTempDetails">
-            <div className="container">
-                <div className="row">
-                    <div className="col-2 currentTempIcon">
-                        <ReactAnimatedWeather
-                            icon="CLEAR_DAY"
-                            color="black"
-                            size={55}
-                            animate={true}
-                        />
-                    </div>
-                    <div className="col-4">
-                        <div className="row text-center">
-                            <div className="col-12 currentTempDisplay">
-                                25°
+    const [weatherData, setWeatherData] = useState({ ready: false });
+
+    function handleResponse(response) {
+        // console.log(response.data);
+        setWeatherData({
+            ready: true,
+            temperature: response.data.main.temp,
+            minTemperature: response.data.main.temp_min,
+            maxTemperature: response.data.main.temp_max,
+            feelsLike: response.data.main.feels_like,
+            humidity: response.data.main.humidity,
+            wind: response.data.wind.speed,
+            description: response.data.weather[0].main,
+        });
+    }
+    if (weatherData.ready) {
+        return (
+            <div className="CurrentTempDetails">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-2 currentTempIcon">
+                            <ReactAnimatedWeather
+                                icon="CLEAR_DAY"
+                                color="black"
+                                size={55}
+                                animate={true}
+                            />
+                        </div>
+                        <div className="col-4">
+                            <div className="row text-center">
+                                <div className="col-12 currentTempDisplay">
+                                    {Math.round(weatherData.temperature)}°
+                                </div>
+                                <div className="col-12 currentTempDescription">
+                                    A {weatherData.description} day
+                                </div>
                             </div>
-                            <div className="col-12 currentTempDescription">
-                                A sunny day
+                        </div>
+                        <div className="col-6 weather-details">
+                            <div className="row">
+                                <div className="col-6">H: {Math.round(weatherData.maxTemperature)}° </div>
+                                <div className="col-6">L: {Math.round(weatherData.minTemperature)}°</div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="col-6 weather-details">
-                        <div className="row">
-                            <div className="col-6">H: 28° </div>
-                            <div className="col-6">L:18°</div>
-                        </div>
-                        <div className="row weather-details-row">
-                            <div className="col-6">feels like:</div>
-                            <div className="col-6">24°</div>
-                        </div>
-                        <div className="row weather-details-row">
-                            <div className="col-6">humidity:</div>
-                            <div className="col-6">40%</div>
-                        </div>
-                        <div className="row weather-details-row">
-                            <div className="col-6">wind:</div>
-                            <div className="col-6">20km/h</div>
+                            <div className="row weather-details-row">
+                                <div className="col-6">feels like:</div>
+                                <div className="col-6">{weatherData.feelsLike}°</div>
+                            </div>
+                            <div className="row weather-details-row">
+                                <div className="col-6">humidity:</div>
+                                <div className="col-6">{weatherData.humidity}%</div>
+                            </div>
+                            <div className="row weather-details-row">
+                                <div className="col-6">wind:</div>
+                                <div className="col-6">{weatherData.wind}km/h</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    } else {
+        const apiKey = "37ad42968d574bd7ca8c02bca5b2be8b";
+        let city = "sydney";
+        let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(handleResponse);
+
+        return "Loading...";
+    }
 }
