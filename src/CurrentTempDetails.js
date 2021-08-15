@@ -49,7 +49,7 @@ export default function CurrentTempDetails() {
                             </div>
                             <div className="row weather-details-row">
                                 <div className="col-6">feels like:</div>
-                                <div className="col-6">{weatherData.feelsLike}°</div>
+                                <div className="col-6">{Math.round(weatherData.feelsLike)}°</div>
                             </div>
                             <div className="row weather-details-row">
                                 <div className="col-6">humidity:</div>
@@ -57,7 +57,7 @@ export default function CurrentTempDetails() {
                             </div>
                             <div className="row weather-details-row">
                                 <div className="col-6">wind:</div>
-                                <div className="col-6">{weatherData.wind}km/h</div>
+                                <div className="col-6">{Math.round(weatherData.wind)}m/s</div>
                             </div>
                         </div>
                     </div>
