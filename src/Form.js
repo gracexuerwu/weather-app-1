@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 // import axios from "axios";
 
 export default function Form() {
-    // function handleResponse(response) {
-    //     console.log(response.data);
-    // }
+    const [city, setCity] = useState("");
 
-    // let city = "Sydney";
-    // const apiKey = "4eea4127955e8b06b0dda13735710988";
-    // let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    // axios.get(apiUrl).then(handleResponse);
+    function handleSubmit(event) {
+        event.preventDefault();
+        alert(`Searching for ${city}`);
+    }
+
+    function updateCity(event) {
+        console.log(event.target.value);
+        setCity(event.target.value);
+    }
+
     return (
-        <form id="search-form">
+        <form id="search-form" onSubmit={handleSubmit}>
             <div className="form-row">
                 <div className="col-9 btn">
                     <input
                         type="text"
+                        onChange={updateCity}
                         className="form-control"
                         id="search-input"
                         placeholder="Enter a city"
