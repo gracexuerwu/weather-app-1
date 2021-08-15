@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Form from "./Form";
 import CurrentDay from "./CurrentDay";
@@ -14,13 +14,15 @@ import LocationCity from "./LocationCity";
 
 
 export default function Wrapper() {
+    const [locationCityValue, setLocationCityValue] = useState("Sydney");
+
     function callback(temperatureUnit) {
         console.log(temperatureUnit);
     }
     return (
         <div className="container">
             <div className="wrapper" id="background-element">
-                <Form />
+                <Form setLocationCityValue={setLocationCityValue} />
                 <div className="row justify-content-between">
                     <div className="col-4">
                         <LocationCountry />
@@ -29,7 +31,7 @@ export default function Wrapper() {
                         <TemperatureToggle toggle={true} callback={callback} />
                     </div>
                 </div>
-                <LocationCity />
+                <LocationCity locationCityValue={locationCityValue} />
                 <CurrentDay />
                 <CurrentTempWrapper />
                 <Week />

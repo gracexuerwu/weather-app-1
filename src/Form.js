@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import "./App.css";
-// import axios from "axios";
 
-export default function Form() {
-    const [city, setCity] = useState("");
+export default function Form({ setLocationCityValue }) {
+    // const [city, setCity] = useState("");
 
     function handleSubmit(event) {
         event.preventDefault();
-        alert(`Searching for ${city}`);
+        // alert(`Searching for ${city}`);
     }
 
     function updateCity(event) {
-        console.log(event.target.value);
-        setCity(event.target.value);
+        setLocationCityValue(event.target.value);
+        // setCity(event.target.value);
     }
 
     return (
