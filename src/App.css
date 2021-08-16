@@ -133,7 +133,7 @@
   font-size: 13px;
   line-height: 19px;
   font-weight: 400px;
-  padding-top: 35px;
+  padding-top: 25px;
 }
 .Signature .signatureGitLink {
   text-decoration: none;
@@ -169,10 +169,9 @@
 }
 .CurrentTempDetails {
   text-align: center;
-  padding-top: 28px;
 }
 .CurrentTempDetails .weather-details {
-  padding-top: 13px;
+  padding-top: 30px;
   text-align: left;
   font-family: Lexend Deca;
   font-style: normal;
@@ -182,6 +181,7 @@
 }
 .CurrentTempDetails .weather-details-row {
   padding-top: 10px;
+  padding-left: 10px;
 }
 .CurrentTempDetails .currentTempDisplay {
   font-family: Playfair Display;
@@ -190,6 +190,7 @@
   font-size: 60px;
   line-height: 80px;
   text-align: center;
+  padding-top: 20px;
 }
 .CurrentTempDetails .currentTempDescription {
   font-family: Playfair Display;
@@ -200,7 +201,7 @@
   color: #193b7b;
 }
 .CurrentTempDetails .currentTempIcon {
-  padding-top: 30px;
+  padding-top: 50px;
 }
 .SunriseSunsetTime .sunsetLine {
   display: flex;

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./App.css";
 import Form from "./Form";
 import CurrentDay from "./CurrentDay";
-import CurrentTempWrapper from "./CurrentTempWrapper";
+import CurrentTempDetails from "./CurrentTempDetails";
 import Week from "./Week";
 import ForecastBox from "./ForecastBox";
-import SunriseSunsetWrapper from "./SunriseSunsetWrapper";
+import SunriseSunsetTime from "./SunriseSunsetTime";
 import Signature from "./Signature";
 import TemperatureToggle from "./TemperatureToggle";
 import LocationCountry from "./LocationCountry";
@@ -16,15 +16,24 @@ import axios from "axios";
 
 export default function Wrapper() {
     //Temperature toggle 
-    function callback(temperatureUnit) {
-        console.log(temperatureUnit);
+    function callbackByTemperatureUnit(temperatureUnitFromToggle) {
+        alert(temperatureUnitFromToggle);
+        setTemperatureUnit(temperatureUnitFromToggle);
     }
+
+    function callbackByForm(cityFromForm) {
+        setCity(cityFromForm);
+    }
+    //WeatherData 
     const [weatherData, setWeatherData] = useState({ ready: false });
+    const [city, setCity] = useState("Sydney");
+    const [temperatureUnit, setTemperatureUnit] = useState(true);
 
     function handleResponse(response) {
-        // console.log(response.data);
+        console.log(response.data);
         setWeatherData({
             ready: true,
+            country: response.data.sys.country,
             temperature: response.data.main.temp,
             minTemperature: response.data.main.temp_min,
             maxTemperature: response.data.main.temp_max,
@@ -38,21 +47,21 @@ export default function Wrapper() {
         return (
             <div className="container">
                 <div className="wrapper" id="background-element">
-                    <Form />
+                    <Form callback={callbackByForm} />
                     <div className="row justify-content-between">
                         <div className="col-4">
-                            <LocationCountry />
+                            <LocationCountry weatherData={weatherData} />
                         </div>
                         <div className="col-4 temperature-toggle">
-                            <TemperatureToggle toggle={true} callback={callback} />
+                            <TemperatureToggle toggle={temperatureUnit} callback={callbackByTemperatureUnit} />
                         </div>
                     </div>
-                    <LocationCity />
+                    <LocationCity city={city} />
                     <CurrentDay />
-                    <CurrentTempWrapper weatherData={weatherData} />
+                    <CurrentTempDetails weatherData={weatherData} />
                     <Week />
                     <ForecastBox />
-                    <SunriseSunsetWrapper />
+                    <SunriseSunsetTime />
                     <Signature />
                 </div>
             </div>
@@ -60,7 +69,6 @@ export default function Wrapper() {
     }
     else {
         const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-        let city = "sydney";
         let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
 
