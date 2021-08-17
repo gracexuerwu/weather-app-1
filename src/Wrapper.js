@@ -27,9 +27,9 @@ export default function Wrapper() {
     }
 
     function callWeatherAPI(city) {
-      const apiKey = "4eea4127955e8b06b0dda13735710988";
-      let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-      axios.get(apiUrl).then(handleResponse);
+        const apiKey = "4eea4127955e8b06b0dda13735710988";
+        let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(handleResponse);
     }
 
     //WeatherData 
@@ -49,7 +49,8 @@ export default function Wrapper() {
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
             description: response.data.weather[0].main,
-            timezone: response.data.timezone,
+            timeStamp: response.data.dt * 1000,
+            timezone: response.data.timezone / 3600,
         });
     }
     if (weatherData.ready) {
@@ -77,7 +78,7 @@ export default function Wrapper() {
         );
     }
     else {
-      callWeatherAPI(city)
-      return "Loading...";
+        callWeatherAPI(city)
+        return "Loading...";
     }
 }
