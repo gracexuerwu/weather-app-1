@@ -4,15 +4,15 @@ import ReactAnimatedWeather from 'react-animated-weather';
 
 
 export default function CurrentTempDetails(props) {
-  
-  function convertCelsiusToFahrenheitFormular(temperatureInCelsius, temperatureUnit) {
-    if (temperatureUnit) {
-      return Math.round(temperatureInCelsius);
+
+    function convertCelsiusToFahrenheitFormular(temperatureInCelsius, temperatureUnit) {
+        if (temperatureUnit) {
+            return Math.round(temperatureInCelsius);
+        }
+        else {
+            return Math.round((temperatureInCelsius * 9 / 5) + 32);
+        }
     }
-    else {
-      return Math.round((temperatureInCelsius * 9 / 5) + 32);
-    }
-  }
 
     return (
         <div className="CurrentTempDetails">
@@ -31,8 +31,8 @@ export default function CurrentTempDetails(props) {
                             <div className="col-12 currentTempDisplay">
                                 {convertCelsiusToFahrenheitFormular(props.weatherData.temperature, props.temperatureUnit)}°
                             </div>
-                            <div className="col-12 currentTempDescription">
-                                A {props.weatherData.description} day
+                            <div className="col-12 currentTempDescription text-capitalize">
+                                {props.weatherData.description}
                             </div>
                         </div>
                     </div>

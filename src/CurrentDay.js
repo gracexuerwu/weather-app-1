@@ -4,24 +4,24 @@ import "./App.css";
 export default function CurrentDay(props) {
     // console.log(props.timezone);
     function updateHourMinute() {
-      let date = new Date();
-      let hours = (date.getUTCHours() + (props.timezone) + 24) % 24;
-      if (hours < 10) {
-          hours = `0${hours}`;
-      }
-      setHourString(hours);
+        let date = new Date();
+        let hours = (date.getUTCHours() + (props.timezone) + 24) % 24;
+        if (hours < 10) {
+            hours = `0${hours}`;
+        }
+        setHourString(hours);
 
-      let minutes = date.getMinutes();
-      if (minutes < 10) {
-          minutes = `0${minutes}`;
-      }
-      setMinuteString(minutes);
+        let minutes = date.getMinutes();
+        if (minutes < 10) {
+            minutes = `0${minutes}`;
+        }
+        setMinuteString(minutes);
 
-      let seconds = date.getSeconds();
-      if (seconds < 10) {
-        seconds = `0${seconds}`;
-      }
-      setSecondString(seconds);
+        let seconds = date.getSeconds();
+        if (seconds < 10) {
+            seconds = `0${seconds}`;
+        }
+        setSecondString(seconds);
     }
 
     const [hourString, setHourString] = useState("");
@@ -33,7 +33,7 @@ export default function CurrentDay(props) {
 
     return (
         <div className="CurrentDay">
-            <h3>LOCAL TIME {hourString}:{minuteString}:{secondString}</h3>
+            <h3>LOCAL TIME <span className="localTimeDisplay">{hourString}:{minuteString}:{secondString}</span></h3>
         </div>
     );
 }

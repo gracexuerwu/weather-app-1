@@ -190,20 +190,24 @@
   font-size: 60px;
   line-height: 80px;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 25px;
 }
 .CurrentTempDetails .currentTempDescription {
   font-family: Playfair Display;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
   color: #193b7b;
 }
 .CurrentTempDetails .currentTempIcon {
   padding-top: 50px;
+  padding-left: 25px;
 }
 .SunriseSunsetTime .sunsetLine {
   display: flex;
   align-items: center;
+}
+.CurrentDay .localTimeDisplay {
+  color: #5b5b5b;
 }

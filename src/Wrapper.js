@@ -48,7 +48,7 @@ export default function Wrapper() {
             feelsLike: response.data.main.feels_like,
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
-            description: response.data.weather[0].main,
+            description: response.data.weather[0].description,
             timeStamp: response.data.dt * 1000,
             timezone: response.data.timezone / 3600,
         });
