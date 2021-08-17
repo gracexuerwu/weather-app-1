@@ -23,7 +23,15 @@ export default function Wrapper() {
 
     function callbackByForm(cityFromForm) {
         setCity(cityFromForm);
+        callWeatherAPI(cityFromForm);
     }
+
+    function callWeatherAPI(city) {
+      const apiKey = "4eea4127955e8b06b0dda13735710988";
+      let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+      axios.get(apiUrl).then(handleResponse);
+    }
+
     //WeatherData 
     const [weatherData, setWeatherData] = useState({ ready: false });
     const [city, setCity] = useState("Sydney");
@@ -41,6 +49,7 @@ export default function Wrapper() {
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
             description: response.data.weather[0].main,
+            timezone: response.data.timezone,
         });
     }
     if (weatherData.ready) {
@@ -57,7 +66,7 @@ export default function Wrapper() {
                         </div>
                     </div>
                     <LocationCity city={city} />
-                    <CurrentDay />
+                    <CurrentDay timezone={weatherData.timezone} />
                     <CurrentTempDetails weatherData={weatherData} />
                     <Week />
                     <ForecastBox />
@@ -68,10 +77,7 @@ export default function Wrapper() {
         );
     }
     else {
-        const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-        let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(handleResponse);
-
-        return "Loading...";
+      callWeatherAPI(city)
+      return "Loading...";
     }
 }
