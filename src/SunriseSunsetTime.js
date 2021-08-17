@@ -5,7 +5,7 @@ import Sunset from "./images/sunset.png";
 
 export default function SunriseSunsetTime() {
     return (
-        <div className="SunriseSunsetTime">
+        <div className="SunriseSunsetTime SunriseSunsetWrapper">
             <div className="container">
                 <div className="row">
                     <div className="col-3">

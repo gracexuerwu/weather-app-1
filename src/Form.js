@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import "./App.css";
 
-export default function Form({ setLocationCityValue }) {
-    // const [city, setCity] = useState("");
+export default function Form(props) {
+    const [city, setCity] = useState("");
 
     function handleSubmit(event) {
         event.preventDefault();
-        // alert(`Searching for ${city}`);
+        props.callback(city);
     }
 
     function updateCity(event) {
-        setLocationCityValue(event.target.value);
-        // setCity(event.target.value);
+        setCity(event.target.value);
     }
 
     return (
