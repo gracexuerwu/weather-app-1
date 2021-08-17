@@ -4,6 +4,15 @@ import ReactAnimatedWeather from 'react-animated-weather';
 
 
 export default function CurrentTempDetails(props) {
+  
+  function convertCelsiusToFahrenheitFormular(temperatureInCelsius, temperatureUnit) {
+    if (temperatureUnit) {
+      return Math.round(temperatureInCelsius);
+    }
+    else {
+      return Math.round((temperatureInCelsius * 9 / 5) + 32);
+    }
+  }
 
     return (
         <div className="CurrentTempDetails">
@@ -20,7 +29,7 @@ export default function CurrentTempDetails(props) {
                     <div className="col-4">
                         <div className="row text-center">
                             <div className="col-12 currentTempDisplay">
-                                {Math.round(props.weatherData.temperature)}°
+                                {convertCelsiusToFahrenheitFormular(props.weatherData.temperature, props.temperatureUnit)}°
                             </div>
                             <div className="col-12 currentTempDescription">
                                 A {props.weatherData.description} day
@@ -29,12 +38,12 @@ export default function CurrentTempDetails(props) {
                     </div>
                     <div className="col-6 weather-details">
                         <div className="row weather-details-row">
-                            <div className="col-6">H: {Math.round(props.weatherData.maxTemperature)}° </div>
-                            <div className="col-6">L: {Math.round(props.weatherData.minTemperature)}°</div>
+                            <div className="col-6">H: {convertCelsiusToFahrenheitFormular(props.weatherData.maxTemperature, props.temperatureUnit)}° </div>
+                            <div className="col-6">L: {convertCelsiusToFahrenheitFormular(props.weatherData.minTemperature, props.temperatureUnit)}°</div>
                         </div>
                         <div className="row weather-details-row">
                             <div className="col-6">feels like:</div>
-                            <div className="col-6">{Math.round(props.weatherData.feelsLike)}°</div>
+                            <div className="col-6">{convertCelsiusToFahrenheitFormular(props.weatherData.feelsLike, props.temperatureUnit)}°</div>
                         </div>
                         <div className="row weather-details-row">
                             <div className="col-6">humidity:</div>
