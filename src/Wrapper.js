@@ -17,7 +17,7 @@ import axios from "axios";
 export default function Wrapper() {
     //Temperature toggle 
     function callbackByTemperatureUnit(temperatureUnitFromToggle) {
-        alert(temperatureUnitFromToggle);
+        // alert(temperatureUnitFromToggle);
         setTemperatureUnit(temperatureUnitFromToggle);
     }
 
@@ -68,7 +68,7 @@ export default function Wrapper() {
                     </div>
                     <LocationCity city={city} />
                     <CurrentDay timezone={weatherData.timezone} />
-                    <CurrentTempDetails weatherData={weatherData} />
+                    <CurrentTempDetails weatherData={weatherData} temperatureUnit={temperatureUnit} />
                     <Week />
                     <ForecastBox />
                     <SunriseSunsetTime />
