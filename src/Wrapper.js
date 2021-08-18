@@ -51,6 +51,7 @@ export default function Wrapper() {
             description: response.data.weather[0].description,
             timeStamp: response.data.dt * 1000,
             timezone: response.data.timezone / 3600,
+            icon: response.data.weather[0].icon
         });
     }
     if (weatherData.ready) {

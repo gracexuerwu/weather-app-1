@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import ReactAnimatedWeather from 'react-animated-weather';
+import WeatherIcon from "./WeatherIcon";
+
 
 
 export default function CurrentTempDetails(props) {
@@ -19,12 +20,7 @@ export default function CurrentTempDetails(props) {
             <div className="container CurrentTempWrapper">
                 <div className="row">
                     <div className="col-2 currentTempIcon">
-                        <ReactAnimatedWeather
-                            icon="CLEAR_DAY"
-                            color="black"
-                            size={55}
-                            animate={true}
-                        />
+                        <WeatherIcon code={props.weatherData.icon} />
                     </div>
                     <div className="col-4">
                         <div className="row text-center">
