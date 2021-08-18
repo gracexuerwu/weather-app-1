@@ -1,9 +1,15 @@
 import React from "react";
 import Lottie from 'lottie-react';
 
-// import CLEAR_DAY from "./animation/ClearDay.json";
-// import CLEAR_NIGHT from "./animation/ClearNight.json";
-import weatherCloudy from "./animation/cloudy.json";
+import cloudy from "./animation/cloudy.json";
+import fog from "./animation/cloudy.json";
+import haze from "./animation/cloudy.json";
+import lightSnow from "./animation/cloudy.json";
+import night from "./animation/cloudy.json";
+import rainy from "./animation/cloudy.json";
+import stormy from "./animation/cloudy.json";
+import sun from "./animation/cloudy.json";
+import torrentialRain from "./animation/cloudy.json";
 
 
 export default function WeatherLottie(props) {
@@ -28,16 +34,47 @@ export default function WeatherLottie(props) {
   //   "050n": "FOG",
   // };
   let weatherIcon;
-  if (props.code === "04d" || props.code === "04n") {
-    weatherIcon = weatherCloudy;
+  if (props.code === "01d") {
+    weatherIcon = sun;
   }
-  else if (props.code === "05d" || props.code === "05n") {
-    weatherIcon = weatherCloudy;
+  else if (props.code === "01n") {
+    weatherIcon = night;
+  }
+  else if (props.code === "02d") {
+    weatherIcon = cloudy;
+  }
+  else if (props.code === "02n") {
+    weatherIcon = night;
+  }
+  else if (props.code === "03d" || props.code === "03n" || props.code === "04d" || props.code === "04n") {
+    weatherIcon = cloudy;
+  }
+  else if (props.code === "09d" || props.code === "09n") {
+    weatherIcon = rainy;
+  }
+  else if (props.code === "010d" || props.code === "010n") {
+    weatherIcon = torrentialRain;
+  }
+  else if (props.code === "011d" || props.code === "011n") {
+    weatherIcon = stormy;
+  }
+  else if (props.code === "013d" || props.code === "013n") {
+    weatherIcon = lightSnow;
+  }
+  else if (props.code === "50d") {
+    weatherIcon = haze;
+  }
+  else if (props.code === "50n") {
+    weatherIcon = fog;
   }
   else {
-    weatherIcon = weatherCloudy;
+    weatherIcon = sun;
   }
   return (
     <Lottie animationData={weatherIcon} />
   );
 }
+
+  // else if (props.code === "05d" || props.code === "05n") {
+  //   weatherIcon = cloudy;
+  // }
