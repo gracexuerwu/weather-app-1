@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import WeatherIcon from "./WeatherIcon";
+// import WeatherIcon from "./WeatherIcon";
+import WeatherLottie from "./WeatherLottie";
 
 
 
@@ -20,7 +21,8 @@ export default function CurrentTempDetails(props) {
             <div className="container CurrentTempWrapper">
                 <div className="row">
                     <div className="col-2 currentTempIcon">
-                        <WeatherIcon code={props.weatherData.icon} />
+                        {/* <WeatherIcon code={props.weatherData.icon} /> */}
+                        <WeatherLottie code={props.weatherData.icon} />
                     </div>
                     <div className="col-4">
                         <div className="row text-center">
