@@ -1,39 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import "./App.css";
 
 export default function CurrentDay(props) {
-    // console.log(props.timezone);
-    function updateHourMinute() {
-        let date = new Date();
-        let hours = (date.getUTCHours() + (props.timezone) + 24) % 24;
-        if (hours < 10) {
-            hours = `0${hours}`;
-        }
-        setHourString(hours);
+  useMemo(() => {
+    console.log("Run only once");
+    setInterval(updateMinuteSecond, 1000);
+  }, []);
 
-        let minutes = date.getMinutes();
-        if (minutes < 10) {
-            minutes = `0${minutes}`;
-        }
-        setMinuteString(minutes);
-
-        let seconds = date.getSeconds();
-        if (seconds < 10) {
-            seconds = `0${seconds}`;
-        }
-        setSecondString(seconds);
+  function updateMinuteSecond() {
+    let date = new Date();
+    let sec = date.getSeconds();
+    if (sec < 10) {
+      sec = `0${sec}`;
     }
+    setSeconds(sec);
+  }
 
-    const [hourString, setHourString] = useState("");
-    const [minuteString, setMinuteString] = useState("");
-    const [secondString, setSecondString] = useState("");
+  const [seconds, setSeconds] = useState("00");
 
-    setInterval(updateHourMinute, 1000);
-    // updateHourMinute();
+  let date = new Date();
+  let hours = (date.getUTCHours() + props.timezone + 24) % 24;
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-    return (
-        <div className="CurrentDay">
-            <h3>LOCAL TIME <span className="localTimeDisplay">{hourString}:{minuteString}:{secondString}</span></h3>
-        </div>
-    );
+  return (
+    <div className="CurrentDay">
+      <h3>
+        LOCAL TIME {hours}:{minutes}:{seconds}
+      </h3>
+    </div>
+  );
 }
