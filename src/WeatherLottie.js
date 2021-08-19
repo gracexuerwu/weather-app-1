@@ -2,14 +2,14 @@ import React from "react";
 import Lottie from 'lottie-react';
 
 import cloudy from "./animation/cloudy.json";
-import fog from "./animation/cloudy.json";
-import haze from "./animation/cloudy.json";
-import lightSnow from "./animation/cloudy.json";
-import night from "./animation/cloudy.json";
-import rainy from "./animation/cloudy.json";
-import stormy from "./animation/cloudy.json";
-import sun from "./animation/cloudy.json";
-import torrentialRain from "./animation/cloudy.json";
+import fog from "./animation/fog.json";
+import haze from "./animation/haze.json";
+import lightSnow from "./animation/lightSnow.json";
+import night from "./animation/night.json";
+import rainy from "./animation/rainy.json";
+import stormy from "./animation/stormy.json";
+import sun from "./animation/sun.json";
+import torrentialRain from "./animation/torrentialRain.json";
 
 
 export default function WeatherLottie(props) {
