@@ -172,6 +172,7 @@
 }
 .CurrentTempDetails .weather-details {
   padding-top: 30px;
+  padding-left: 20px;
   text-align: left;
   font-family: Lexend Deca;
   font-style: normal;
@@ -181,7 +182,6 @@
 }
 .CurrentTempDetails .weather-details-row {
   padding-top: 10px;
-  padding-left: 10px;
 }
 .CurrentTempDetails .currentTempDisplay {
   font-family: Playfair Display;
@@ -191,6 +191,7 @@
   line-height: 80px;
   text-align: center;
   padding-top: 25px;
+  padding-left: 0px;
 }
 .CurrentTempDetails .currentTempDescription {
   font-family: Playfair Display;
@@ -199,10 +200,13 @@
   font-size: 16px;
   line-height: 24px;
   color: #193b7b;
+  padding-left: 0;
+  text-align: center;
 }
 .CurrentTempDetails .currentTempIcon {
-  padding-top: 50px;
-  padding-left: 25px;
+  padding-top: 55px;
+  padding-right: 1px;
+  padding-left: 20px;
 }
 .SunriseSunsetTime .sunsetLine {
   display: flex;
