@@ -22,6 +22,9 @@ export default function Wrapper() {
     }
 
     function callbackByForm(cityFromForm) {
+        if (cityFromForm === "") {
+            return;
+        }
         setCity(cityFromForm);
         callWeatherAPI(cityFromForm);
     }

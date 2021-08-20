@@ -1,6 +1,6 @@
 import React from "react";
+import "./App.css";
 import Lottie from 'lottie-react';
-
 import cloudy from "./animation/cloudy.json";
 import fog from "./animation/fog.json";
 import haze from "./animation/haze.json";
@@ -9,7 +9,6 @@ import night from "./animation/night.json";
 import rainy from "./animation/rainy.json";
 import stormy from "./animation/stormy.json";
 import sun from "./animation/sun.json";
-import torrentialRain from "./animation/torrentialRain.json";
 
 
 export default function WeatherLottie(props) {
@@ -52,13 +51,13 @@ export default function WeatherLottie(props) {
   else if (props.code === "09d" || props.code === "09n") {
     weatherIcon = rainy;
   }
-  else if (props.code === "010d" || props.code === "010n") {
-    weatherIcon = torrentialRain;
+  else if (props.code === "10d" || props.code === "10n") {
+    weatherIcon = rainy;
   }
-  else if (props.code === "011d" || props.code === "011n") {
+  else if (props.code === "11d" || props.code === "11n") {
     weatherIcon = stormy;
   }
-  else if (props.code === "013d" || props.code === "013n") {
+  else if (props.code === "13d" || props.code === "13n") {
     weatherIcon = lightSnow;
   }
   else if (props.code === "50d") {
@@ -68,13 +67,12 @@ export default function WeatherLottie(props) {
     weatherIcon = fog;
   }
   else {
+    alert(`Can't find any match for this weather code ${props.code}!`)
     weatherIcon = sun;
   }
   return (
-    <Lottie animationData={weatherIcon} />
+    <Lottie animationData={weatherIcon} height={400}
+      width={400} />
   );
 }
 
-  // else if (props.code === "05d" || props.code === "05n") {
-  //   weatherIcon = cloudy;
-  // }
