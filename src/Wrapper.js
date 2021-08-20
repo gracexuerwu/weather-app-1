@@ -11,6 +11,7 @@ import TemperatureToggle from "./TemperatureToggle";
 import LocationCountry from "./LocationCountry";
 import LocationCity from "./LocationCity";
 import axios from "axios";
+import Loader from "react-loader-spinner";
 
 
 
@@ -83,6 +84,15 @@ export default function Wrapper() {
     }
     else {
         callWeatherAPI(city)
-        return "Loading...";
+        // return "Loading...";
+        return (
+            <Loader
+                type="TailSpin"
+                color="#777777"
+                height={50}
+                width={50}
+                timeout={10000} //3 secs
+            />
+        );
     }
 }

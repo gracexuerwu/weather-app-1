@@ -71,8 +71,7 @@ export default function WeatherLottie(props) {
     weatherIcon = sun;
   }
   return (
-    <Lottie animationData={weatherIcon} height={400}
-      width={400} />
+    <Lottie animationData={weatherIcon} />
   );
 }
 
