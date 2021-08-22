@@ -4,13 +4,13 @@ import Form from "./Form";
 import CurrentDay from "./CurrentDay";
 import CurrentTempDetails from "./CurrentTempDetails";
 import Week from "./Week";
-// import ForecastBox from "./ForecastBox";
+import ForecastBox from "./ForecastBox";
 import SunriseSunsetTime from "./SunriseSunsetTime";
 import Signature from "./Signature";
 import TemperatureToggle from "./TemperatureToggle";
 import LocationCountry from "./LocationCountry";
 import LocationCity from "./LocationCity";
-import ForecastBoxDaily from "./ForecastBoxDaily";
+// import ForecastBoxDaily from "./ForecastBoxDaily";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 
@@ -77,8 +77,8 @@ export default function Wrapper() {
                     <CurrentDay timezone={weatherData.timezone} />
                     <CurrentTempDetails weatherData={weatherData} temperatureUnit={temperatureUnit} />
                     <Week />
-                    <ForecastBoxDaily coordinates={weatherData.coordinates} />
-                    {/* <ForecastBox /> */}
+                    {/* <ForecastBoxDaily coordinates={weatherData.coordinates} /> */}
+                    <ForecastBox coordinates={weatherData.coordinates} />
                     <SunriseSunsetTime />
                     <Signature />
                 </div>

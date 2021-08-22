@@ -117,6 +117,10 @@
 .ForecastBox .forecast-row {
   padding-right: 10px;
 }
+.ForecastBox .forecastCol {
+  padding-right: 0px;
+  padding-left: 0px;
+}
 .SunriseSunsetWrapper {
   margin: 14px auto 12px;
   width: 407px;
@@ -217,4 +221,9 @@
 }
 .localTimeDisplay {
   color: #5b5b5b;
+}
+.forecastBoxDaily .forecastDailyIcon {
+  padding-top: 3px;
+  padding-right: 8px;
+  padding-left: 8px;
 }

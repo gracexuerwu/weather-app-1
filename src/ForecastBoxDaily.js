@@ -1,42 +1,34 @@
 import React from "react";
 import "./App.css";
-import ReactAnimatedWeather from 'react-animated-weather';
-import axios from "axios";
+import WeatherLottie from "./WeatherLottie";
 
 export default function ForecastBoxDaily(props) {
-    function handleResponse(response) {
-        console.log(response.data);
-    }
-    let longitude = props.coordinates.lon;
-    let latitude = props.coordinates.lat;
-    const apiKey = "4eea4127955e8b06b0dda13735710988";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    function day() {
+        let date = new Date(props.data.dt * 1000);
+        let day = date.getDay();
 
-    axios.get(apiUrl).then(handleResponse);
+        let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+
+        return days[day];
+    }
 
     return (
         <div className="forecastBoxDaily col-2">
-            <div className="forecast-date">Mon</div>
-            <div id="weather-icon">
-                <ReactAnimatedWeather
-                    icon="CLOUDY"
-                    color="black"
-                    size={40}
-                    animate={true}
-                />
+            <div className="forecast-date">{day()}</div>
+            <div className="forecastDailyIcon">
+                <WeatherLottie code={props.data.weather[0].icon} />
             </div>
             <div className="row forecast-temperature no-gutters">
                 <div className="col-6">
                     <span className="forecast-temperature-max">
-                        18°</span>
+                        {Math.round(props.data.temp.max)}°</span>
                 </div>
                 <div className="col-6">
                     <span className="forecast-temperature-min">
-                        10°
+                        {Math.round(props.data.temp.min)}°
                     </span>
                 </div>
             </div>
         </div>
-
     );
 }
