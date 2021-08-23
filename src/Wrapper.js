@@ -78,7 +78,7 @@ export default function Wrapper() {
                     <CurrentDay timezone={weatherData.timezone} />
                     <CurrentTempDetails weatherData={weatherData} temperatureUnit={temperatureUnit} />
                     <Week />
-                    <ForecastBox coordinates={weatherData.coordinates} />
+                    <ForecastBox coordinates={weatherData.coordinates} temperatureUnit={temperatureUnit} />
                     <SunriseSunsetTime sunriseTime={weatherData.sunriseTime} sunsetTime={weatherData.sunsetTime} timezone={weatherData.timezone} />
                     <Signature />
                 </div>

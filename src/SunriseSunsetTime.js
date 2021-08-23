@@ -2,6 +2,9 @@ import React from "react";
 import "./App.css";
 import Sunrise from "./images/sunrise.png";
 import Sunset from "./images/sunset.png";
+// import Lottie from 'lottie-react';
+// import sunrise from "./animation/sunrise.json";
+// import sunset from "./animation/sunset.json";
 
 export default function SunriseSunsetTime(props) {
     function getTime(timestamp, timeZone) {
