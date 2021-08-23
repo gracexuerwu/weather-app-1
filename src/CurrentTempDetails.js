@@ -2,19 +2,19 @@ import React from "react";
 import "./App.css";
 // import WeatherIcon from "./WeatherIcon";
 import WeatherLottie from "./WeatherLottie";
-
+import { convertCelsiusToFahrenheitFormular } from "./library";
 
 
 export default function CurrentTempDetails(props) {
 
-    function convertCelsiusToFahrenheitFormular(temperatureInCelsius, temperatureUnit) {
-        if (temperatureUnit) {
-            return Math.round(temperatureInCelsius);
-        }
-        else {
-            return Math.round((temperatureInCelsius * 9 / 5) + 32);
-        }
-    }
+    // function convertCelsiusToFahrenheitFormular(temperatureInCelsius, temperatureUnit) {
+    //     if (temperatureUnit) {
+    //         return Math.round(temperatureInCelsius);
+    //     }
+    //     else {
+    //         return Math.round((temperatureInCelsius * 9 / 5) + 32);
+    //     }
+    // }
 
     return (
         <div className="CurrentTempDetails">

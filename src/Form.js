@@ -6,7 +6,7 @@ export default function Form(props) {
 
     function handleSubmit(event) {
         event.preventDefault();
-        props.callback(city);
+        props.callbackBySearch(city);
     }
 
     function updateCity(event) {
@@ -33,7 +33,7 @@ export default function Form(props) {
                     </button>
                 </div>
                 <div className="col-2 btn">
-                    <button type="submit" className="btn btn-link" id="button-location">
+                    <button type="button" className="btn btn-link" id="button-location" onClick={props.callbackByLocation}>
                         <i className="fas fa-location-arrow"></i>
                     </button>
                 </div>

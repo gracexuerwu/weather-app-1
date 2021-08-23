@@ -25,7 +25,7 @@ export default function ForecastBox(props) {
                         if (index < 5) {
                             return (
                                 <span className="col forecastCol" key={index}>
-                                    <ForecastBoxDaily data={dailyForecast} />
+                                    <ForecastBoxDaily data={dailyForecast} temperatureUnit={props.temperatureUnit} />
                                 </span>
                             );
                         }

@@ -22,12 +22,16 @@ export default function Wrapper() {
         setTemperatureUnit(temperatureUnitFromToggle);
     }
 
-    function callbackByForm(cityFromForm) {
+    function callbackBySearch(cityFromForm) {
         if (cityFromForm === "") {
             return;
         }
         setCity(cityFromForm);
         callWeatherAPI(cityFromForm);
+    }
+
+    function callbackByLocation() {
+      alert("location button clicked");
     }
 
     function callWeatherAPI(city) {
@@ -65,7 +69,7 @@ export default function Wrapper() {
         return (
             <div className="container">
                 <div className="wrapper" id="background-element">
-                    <Form callback={callbackByForm} />
+                    <Form callbackBySearch={callbackBySearch} callbackByLocation={callbackByLocation}/>
                     <div className="row justify-content-between">
                         <div className="col-6">
                             <LocationCountry weatherData={weatherData} />
