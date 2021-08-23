@@ -31,12 +31,23 @@ export default function Wrapper() {
     }
     function callbackByLocation() {
         alert("location button clicked");
+        navigator.geolocation.getCurrentPosition(retrievePosition);
     }
 
     function callWeatherAPI(city) {
         const apiKey = "4eea4127955e8b06b0dda13735710988";
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
+
+    }
+
+    function retrievePosition(position) {
+        const apiKey = "4eea4127955e8b06b0dda13735710988";
+        let latitude = position.coords.latitude;
+        let longitude = position.coords.longitude;
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+        axios.get(apiUrl).then(handleResponse);
+        setCity(weatherData.geoLocationCity);
     }
 
     //WeatherData 
@@ -61,7 +72,8 @@ export default function Wrapper() {
             icon: response.data.weather[0].icon,
             coordinates: response.data.coord,
             sunriseTime: response.data.sys.sunrise * 1000,
-            sunsetTime: response.data.sys.sunset * 1000
+            sunsetTime: response.data.sys.sunset * 1000,
+            geoLocationCity: response.data.name
         });
     }
     if (weatherData.ready) {
