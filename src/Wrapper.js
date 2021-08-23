@@ -67,7 +67,7 @@ export default function Wrapper() {
                 <div className="wrapper" id="background-element">
                     <Form callback={callbackByForm} />
                     <div className="row justify-content-between">
-                        <div className="col-4">
+                        <div className="col-6">
                             <LocationCountry weatherData={weatherData} />
                         </div>
                         <div className="col-4 temperature-toggle">
