@@ -171,6 +171,9 @@
   font-size: 12px;
   font-family: Lexend Deca;
 }
+.SunriseSunsetTime .timeDisplay {
+  color: #5b5b5b;
+}
 .CurrentTempDetails {
   text-align: center;
 }
@@ -216,7 +219,7 @@
   display: flex;
   align-items: center;
 }
-.CurrentDay .localTimeDisplay {
+.CurrentDay .timeDisplay {
   color: #5b5b5b;
 }
 .localTimeDisplay {
@@ -226,4 +229,14 @@
   padding-top: 3px;
   padding-right: 8px;
   padding-left: 8px;
+}
+.signatureLinkedIn {
+  text-decoration: none;
+  color: black;
+}
+.signatureLinkedIn:hover {
+  color: rgb(75, 75, 75);
+  transition: all 200ms ease;
+  cursor: pointer;
+  text-decoration: underline;
 }

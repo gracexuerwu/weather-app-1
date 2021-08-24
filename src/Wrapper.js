@@ -30,7 +30,6 @@ export default function Wrapper() {
         callWeatherAPI(cityFromForm);
     }
     function callbackByLocation() {
-        alert("location button clicked");
         navigator.geolocation.getCurrentPosition(retrievePosition);
     }
 
@@ -47,7 +46,7 @@ export default function Wrapper() {
         let longitude = position.coords.longitude;
         let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
         axios.get(apiUrl).then(handleResponse);
-        setCity(weatherData.geoLocationCity);
+        // setCity(weatherData.geoLocationCity);
     }
 
     //WeatherData 
@@ -75,6 +74,7 @@ export default function Wrapper() {
             sunsetTime: response.data.sys.sunset * 1000,
             geoLocationCity: response.data.name
         });
+        setCity(response.data.name);
     }
     if (weatherData.ready) {
         return (

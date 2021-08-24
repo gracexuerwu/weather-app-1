@@ -18,14 +18,14 @@ export default function SunriseSunsetTime(props) {
                 <div className="row">
                     <div className="col-3">
                         <img src={Sunrise} alt="Sunrise" width="35" />
-                        <div className="sunriseTime">sunrise {sunriseFormatTime}</div>
+                        <div className="sunriseTime">sunrise <span className="timeDisplay">{sunriseFormatTime}</span></div>
                     </div>
                     <div className="col-6 sunsetLine">
                         <hr />
                     </div>
                     <div className="col-3">
                         <img src={Sunset} alt="Sunset" width="35" />
-                        <div className="sunsetTime">sunset {sunsetFormatTime}</div>
+                        <div className="sunsetTime">sunset <span className="timeDisplay">{sunsetFormatTime}</span></div>
                     </div>
                 </div>
             </div>
